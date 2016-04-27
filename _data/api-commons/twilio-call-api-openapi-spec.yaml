@@ -10,237 +10,208 @@
   paths:
     /Accounts/{AccountSid}/Calls/{CallSid}/Notifications{mediaTypeExtension}:
       get:
-        summary: ""
+        summary: "Get Notifications"
         description: "Returns a list of notifications generated for an account. The list includesnpaging information.n"
         operationId: "returns-a-list-of-notifications-generated-for-an-account-the-list-includespaging-information"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /Accounts/{AccountSid}/Calls/{CallSid}/Recordings{mediaTypeExtension}:
       get:
-        summary: ""
+        summary: "Get Recordings"
         description: "Returns a list of Recording resource representations, each representing anrecording generated during the course of a phone call.n"
         operationId: "returns-a-list-of-recording-resource-representations-each-representing-arecording-generated-during-t"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /Accounts/{AccountSid}/Calls/{CallSid}{mediaTypeExtension}:
       get:
-        summary: ""
+        summary: "Get Calls"
         description: "Returns the single Call resource identified by {CallSid}."
         operationId: "returns-the-single-call-resource-identified-by-callsid"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
       post:
-        summary: ""
+        summary: "Modify a Phone Call"
         description: "Modify a phone call."
         operationId: "modify-a-phone-call"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /Accounts/{AccountSid}/Calls{mediaTypeExtension}:
       get:
-        summary: ""
+        summary: "Get Calls"
         description: "Returns a list of phone calls made to and from the account identified by {AccountSid}."
         operationId: "returns-a-list-of-phone-calls-made-to-and-from-the-account-identified-by-accountsid"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
       post:
-        summary: ""
+        summary: "Make Call"
         description: "To make a call, make an HTTP POST request. Initiate a new phone call."
         operationId: "to-make-a-call-make-an-http-post-request-initiate-a-new-phone-call"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
-          -
-            in: "path"
+          - in: "path"
             name: "mediaTypeExtension"
             description: "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /{AccountSid}/Calls.{format}:
       get:
-        summary: "GetCallList"
+        summary: "Get Call List"
         description: "GetCallList"
         operationId: "getcalllist"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
       post:
-        summary: "MakeCall"
+        summary: "Make Call"
         description: "MakeCall"
         operationId: "makecall"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /{AccountSid}/Calls/{CallSid}.{format}:
       get:
-        summary: "GetCall"
+        summary: "Get Call"
         description: "GetCall"
         operationId: "getcall"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
       post:
-        summary: "ModifyLiveCall"
+        summary: "Modify Live Call"
         description: "ModifyLiveCall"
         operationId: "modifylivecall"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /{AccountSid}/Calls/{CallSid}/Notifications.{format}:
       get:
-        summary: "GetNotificationListForCall"
+        summary: "Get Notifications"
         description: "GetNotificationListForCall"
         operationId: "getnotificationlistforcall"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
     /{AccountSid}/Calls/{CallSid}/Recordings.{format}:
       get:
@@ -248,22 +219,19 @@
         description: "GetRecordingListForCall"
         operationId: "getrecordinglistforcall"
         parameters:
-          -
-            in: "path"
+          - in: "path"
             name: "AccountSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "CallSid"
             type: "string"
-          -
-            in: "path"
+          - in: "path"
             name: "format"
             type: "string"
         responses:
           200:
             description: "OK"
         tags:
-          - ""
+          - "Call"
         security: []
   definitions: []
