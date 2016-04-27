@@ -1,6 +1,6 @@
 - swagger: "2.0"
   info:
-    title: Twilio Usage API
+    title: Twilio Account API
     description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
       company based in San Francisco, California. Twilio allows software developers
       to programmatically make and receive phone calls and send and receive text messages
@@ -17,49 +17,15 @@
   consumes:
   - application/json
   paths:
-    /Accounts/{AccountSid}/Usage/Records/{Subresource}{mediaTypeExtension}:
+    /Accounts/{AccountSid}{mediaTypeExtension}:
       get:
-        summary: Get Account Usage Record Sub Resource
-        description: Returns UsageRecords for all usage categories for a specified period.n
-        operationId: returns-usagerecords-for-all-usage-categories-for-a-specified-period
+        summary: Get Acount
+        description: Returns a representation of an account.
+        operationId: returns-a-representation-of-an-account
         parameters:
         - in: path
           name: AccountSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        - in: path
-          name: Subresource
-          description: '|Subresource|Description|n|---|---|n|Daily|Return multiple UsageRecords
-            for each usage category, each representing usage over a daily time-interval.|n|Monthly|Return
-            multiple UsageRecords for each usage category, each representing usage over
-            a monthly time-interval.|n|Yearly|Return multple UsageRecords for each usage
-            category, each representing usage over a yearly time-interval.|n|AllTime|  Return
-            a single UsageRecord for each usage category, each representing usage over
-            the date-range specified. This is the same as the root /Usage/Records.|n|Today|Return
-            a single UsageRecord per usage category, for todays usage only.|n||Yesterday|Return
-            a single UsageRecord per usage category, for yesterdays usage only.|n|ThisMonth|Return
-            a single UsageRecord per usage category, for this months usage only.|n|LastMonth|Return
-            a single UsageRecord per usage category, for last months usage only.|n'
-        responses:
-          200:
-            description: OK
-        tags:
-        - Usage
-        security: []
-    /Accounts/{AccountSid}/Usage/Records{mediaTypeExtension}:
-      get:
-        summary: Get Account Usage Record
-        description: Returns UsageRecords for all usage categories. The list includes
-          pagingninformation.nBy default, the UsageRecords resource will return one
-          UsageRecord forneach Category, representing all usage accrued all-time for
-          the account.nYou can filter the usage Category or change the date-range over
-          which usagenis counted using optional GET query parameters.n
-        operationId: returns-usagerecords-for-all-usage-categories-the-list-includes-paginginformationby-default-the-usag
-        parameters:
-        - in: path
-          name: AccountSid
+          description: A 34 character string that uniquely identifies this account.
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -68,78 +34,34 @@
           200:
             description: OK
         tags:
-        - Usage
-        security: []
-    /Accounts/{AccountSid}/Usage/Triggers/{UsageTriggerSid}{mediaTypeExtension}:
-      delete:
-        summary: Delete Account Usage Trigger
-        description: Delete this UsageTrigger.
-        operationId: delete-this-usagetrigger
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        - in: path
-          name: UsageTriggerSid
-        responses:
-          200:
-            description: OK
-        tags:
-        - Usage
-        security: []
-      get:
-        summary: Get Account Usage Trigger
-        description: Returns a repesentation of the UsageTrigger.
-        operationId: returns-a-repesentation-of-the-usagetrigger
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        - in: path
-          name: UsageTriggerSid
-        responses:
-          200:
-            description: OK
-        tags:
-        - Usage
+        - account
         security: []
       post:
-        summary: Add Account Usage Trigger
-        description: Tries to update the UsageTriggers properties, and returns the updatednresource
-          representation if successful.n
-        operationId: tries-to-update-the-usagetriggers-properties-and-returns-the-updatedresource-representation-if-succe
+        summary: Add Account
+        description: Allows you to modify the properties of an account.
+        operationId: allows-you-to-modify-the-properties-of-an-account
         parameters:
         - in: path
           name: AccountSid
+          description: A 34 character string that uniquely identifies this account.
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
             JSON or HTML by appending .csv, .json, or .html.n
-        - in: path
-          name: UsageTriggerSid
         responses:
           200:
             description: OK
         tags:
-        - Usage
+        - account
         security: []
-    /Accounts/{AccountSid}/Usage/Triggers{mediaTypeExtension}:
-      get:
-        summary: Get Account Usage Triggers
-        description: Returns a list of UsageTrigger resource representations. The list
-          includesnpaging information.nBy default, all UsageTriggers are returned. You
-          can filter the list bynspecifying one or more query parameters. Note that
-          the query parameters arencase-sensitiven
-        operationId: returns-a-list-of-usagetrigger-resource-representations-the-list-includespaging-informationby-defaul
+      put:
+        summary: Update Account
+        description: Allows you to modify the properties of an account.
+        operationId: allows-you-to-modify-the-properties-of-an-account
         parameters:
         - in: path
           name: AccountSid
+          description: A 34 character string that uniquely identifies this account.
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -148,17 +70,31 @@
           200:
             description: OK
         tags:
-        - Usage
+        - account
+        security: []
+    /Accounts{mediaTypeExtension}:
+      get:
+        summary: Get Acount
+        description: Retrieve a list of the Account resources belonging to the account
+          used to make thenAPI request. This list will include that Account as well.n
+        operationId: retrieve-a-list-of-the-account-resources-belonging-to-the-account-used-to-make-theapi-request-this-l
+        parameters:
+        - in: path
+          name: mediaTypeExtension
+          description: By default, Twilios REST API returns XML. You may obtain CSV,
+            JSON or HTML by appending .csv, .json, or .html.n
+        responses:
+          200:
+            description: OK
+        tags:
+        - account
         security: []
       post:
-        summary: Add Account Usage Triggers
-        description: Creates a new UsageTrigger. Each account can create up to 1,000
-          UsageTriggers.nCurrently, UsageTriggers that are no longer active are not
-          deleted automatically.nUse DELETE to delete triggers you no longer need.n
-        operationId: creates-a-new-usagetrigger-each-account-can-create-up-to-1000-usagetriggerscurrently-usagetriggers-t
+        summary: Add Account
+        description: Create a new Account instance resource as a subaccount of the one
+          used to make the request. SeenCreating Subaccounts for more information.n
+        operationId: create-a-new-account-instance-resource-as-a-subaccount-of-the-one-used-to-make-the-request-seecreati
         parameters:
-        - in: path
-          name: AccountSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -167,6 +103,58 @@
           200:
             description: OK
         tags:
-        - Usage
+        - account
+        security: []
+    /{AccountSid}.{format}:
+      get:
+        summary: Get Account
+        description: GetAccount
+        operationId: getaccount
+        parameters:
+        - in: path
+          name: AccountSid
+          type: string
+        - in: path
+          name: format
+          type: string
+        responses:
+          200:
+            description: OK
+        tags:
+        - account
+        security: []
+      post:
+        summary: Add Friendly Name
+        description: UpdateFriendlyName (POST)
+        operationId: updatefriendlyname-post
+        parameters:
+        - in: path
+          name: AccountSid
+          type: string
+        - in: path
+          name: format
+          type: string
+        responses:
+          200:
+            description: OK
+        tags:
+        - account
+        security: []
+      put:
+        summary: Update Friendly Name
+        description: UpdateFriendlyName (PUT)
+        operationId: updatefriendlyname-put
+        parameters:
+        - in: path
+          name: AccountSid
+          type: string
+        - in: path
+          name: format
+          type: string
+        responses:
+          200:
+            description: OK
+        tags:
+        - account
         security: []
   definitions: []
