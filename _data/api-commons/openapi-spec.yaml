@@ -1,6 +1,6 @@
 - swagger: "2.0"
   info:
-    title: Twilio Account API
+    title: Twilio Application API
     description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
       company based in San Francisco, California. Twilio allows software developers
       to programmatically make and receive phone calls and send and receive text messages
@@ -17,15 +17,16 @@
   consumes:
   - application/json
   paths:
-    /Accounts/{AccountSid}{mediaTypeExtension}:
-      get:
-        summary: Get Acount
-        description: Returns a representation of an account.
-        operationId: returns-a-representation-of-an-account
+    /Accounts/{AccountSid}/Applications/{ApplicationSid}{mediaTypeExtension}:
+      delete:
+        summary: Delete Application
+        description: Delete this application.
+        operationId: delete-this-application
         parameters:
         - in: path
           name: AccountSid
-          description: A 34 character string that uniquely identifies this account.
+        - in: path
+          name: ApplicationSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -34,16 +35,38 @@
           200:
             description: OK
         tags:
-        - account
+        - applications
+        security: []
+      get:
+        summary: Get Application
+        description: Get application instance resource.
+        operationId: get-application-instance-resource
+        parameters:
+        - in: path
+          name: AccountSid
+        - in: path
+          name: ApplicationSid
+        - in: path
+          name: mediaTypeExtension
+          description: By default, Twilios REST API returns XML. You may obtain CSV,
+            JSON or HTML by appending .csv, .json, or .html.n
+        responses:
+          200:
+            description: OK
+        tags:
+        - applications
         security: []
       post:
-        summary: Add Account
-        description: Allows you to modify the properties of an account.
-        operationId: allows-you-to-modify-the-properties-of-an-account
+        summary: Add Application
+        description: Tries to update the applications properties, and returns the updatednresource
+          representation if successful. The returned response is identicalnto that returned
+          above when making a GET request.n
+        operationId: tries-to-update-the-applications-properties-and-returns-the-updatedresource-representation-if-succes
         parameters:
         - in: path
           name: AccountSid
-          description: A 34 character string that uniquely identifies this account.
+        - in: path
+          name: ApplicationSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -52,33 +75,17 @@
           200:
             description: OK
         tags:
-        - account
+        - applications
         security: []
-      put:
-        summary: Update Account
-        description: Allows you to modify the properties of an account.
-        operationId: allows-you-to-modify-the-properties-of-an-account
-        parameters:
-        - in: path
-          name: AccountSid
-          description: A 34 character string that uniquely identifies this account.
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - account
-        security: []
-    /Accounts{mediaTypeExtension}:
+    /Accounts/{AccountSid}/Applications{mediaTypeExtension}:
       get:
-        summary: Get Acount
-        description: Retrieve a list of the Account resources belonging to the account
-          used to make thenAPI request. This list will include that Account as well.n
-        operationId: retrieve-a-list-of-the-account-resources-belonging-to-the-account-used-to-make-theapi-request-this-l
+        summary: Get Applications
+        description: Returns a list of Application resource representations, each representingnan
+          application within your account. The list includes paging information.n
+        operationId: returns-a-list-of-application-resource-representations-each-representingan-application-within-your-a
         parameters:
+        - in: path
+          name: AccountSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -87,14 +94,15 @@
           200:
             description: OK
         tags:
-        - account
+        - applications
         security: []
       post:
-        summary: Add Account
-        description: Create a new Account instance resource as a subaccount of the one
-          used to make the request. SeenCreating Subaccounts for more information.n
-        operationId: create-a-new-account-instance-resource-as-a-subaccount-of-the-one-used-to-make-the-request-seecreati
+        summary: Add Applications
+        description: Creates a new application within your account.
+        operationId: creates-a-new-application-within-your-account
         parameters:
+        - in: path
+          name: AccountSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -103,58 +111,46 @@
           200:
             description: OK
         tags:
-        - account
+        - applications
         security: []
-    /{AccountSid}.{format}:
+    /Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}{mediaTypeExtension}:
       get:
-        summary: Get Account
-        description: GetAccount
-        operationId: getaccount
+        summary: Get Authorized Connected App
+        description: Get the properties of the authorized application.
+        operationId: get-the-properties-of-the-authorized-application
         parameters:
         - in: path
           name: AccountSid
-          type: string
         - in: path
-          name: format
-          type: string
+          name: ConnectAppSid
+        - in: path
+          name: mediaTypeExtension
+          description: By default, Twilios REST API returns XML. You may obtain CSV,
+            JSON or HTML by appending .csv, .json, or .html.n
         responses:
           200:
             description: OK
         tags:
-        - account
+        - applications
         security: []
-      post:
-        summary: Add Friendly Name
-        description: UpdateFriendlyName (POST)
-        operationId: updatefriendlyname-post
+    /Accounts/{AccountSid}/AuthorizedConnectApps{mediaTypeExtension}:
+      get:
+        summary: Get Authorized Connected Apps
+        description: Returns a list of Connect App resource representations, each representing
+          anConnect App youve authorized to access your account. The list includesnpaging
+          information.n
+        operationId: returns-a-list-of-connect-app-resource-representations-each-representing-aconnect-app-youve-authoriz
         parameters:
         - in: path
           name: AccountSid
-          type: string
         - in: path
-          name: format
-          type: string
+          name: mediaTypeExtension
+          description: By default, Twilios REST API returns XML. You may obtain CSV,
+            JSON or HTML by appending .csv, .json, or .html.n
         responses:
           200:
             description: OK
         tags:
-        - account
-        security: []
-      put:
-        summary: Update Friendly Name
-        description: UpdateFriendlyName (PUT)
-        operationId: updatefriendlyname-put
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - account
+        - applications
         security: []
   definitions: []
