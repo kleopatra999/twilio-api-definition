@@ -1,7 +1,7 @@
 {
 	"swagger": "2.0",
 	"info": {
-		"title": "Twilio SIP Credential Lists API",
+		"title": "Twilio SIP Domains API",
 		"description": "Twilio is a cloud communications Infrastructure as a Service(IaaS) company based in San Francisco, California. Twilio allows software developers to programmatically make and receive phone calls and send and receive text messages using its web service APIs. Twilio's services are accessed over HTTP and are billed based on usage.",
 		"termsOfService": "https://www.twilio.com/legal/tos",
 		"version": "2010-04-01"
@@ -12,11 +12,11 @@
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials/{CredentialSid}{mediaTypeExtension}": {
+		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings/{CLSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
-				"description": "Remove a Credential from a CredentialList.",
-				"operationId": "remove-a-credential-from-a-credentiallist",
+				"description": "Remove a CredentialListMapping from a domain",
+				"operationId": "remove-a-credentiallistmapping-from-a-domain",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
@@ -27,12 +27,12 @@
 				},
 				{
 					"in": "path",
-					"name": "CredentialSid"
+					"name": "mediaTypeExtension",
+					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
 				},
 				{
 					"in": "path",
-					"name": "mediaTypeExtension",
-					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+					"name": "SipDomainSid"
 				}],
 				"responses": {
 					"200": {
@@ -41,27 +41,25 @@
 				},
 				"tags": [""],
 				"security": []
-			},
+			}
+		},
+		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
-				"description": "Get a specific Credential in a list. Though a password is stored for each username in your list, the password is not returned to protect your password. If you cannot remember your password, you will need to POST to this resource to update it.",
-				"operationId": "get-a-specific-credential-in-a-list-though-a-password-is-stored-for-each-username-in-your-list-the-p",
+				"description": "Get the user lists mapped to this domain.",
+				"operationId": "get-the-user-lists-mapped-to-this-domain",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
 				},
 				{
 					"in": "path",
-					"name": "CLSid"
-				},
-				{
-					"in": "path",
-					"name": "CredentialSid"
-				},
-				{
-					"in": "path",
 					"name": "mediaTypeExtension",
 					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
 				}],
 				"responses": {
 					"200": {
@@ -73,24 +71,20 @@
 			},
 			"post": {
 				"summary": "",
-				"description": "Change the password of a Credential record.nnIf the change is successful, Twilio will respond with the Credential record but will not include the password in the response.n",
-				"operationId": "change-the-password-of-a-credential-recordif-the-change-is-successful-twilio-will-respond-with-the-c",
+				"description": "Map a CredentialList to the domain.",
+				"operationId": "map-a-credentiallist-to-the-domain",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
 				},
 				{
 					"in": "path",
-					"name": "CLSid"
-				},
-				{
-					"in": "path",
-					"name": "CredentialSid"
-				},
-				{
-					"in": "path",
 					"name": "mediaTypeExtension",
 					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
 				}],
 				"responses": {
 					"200": {
@@ -101,75 +95,27 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}/Credentials{mediaTypeExtension}": {
-			"get": {
-				"summary": "",
-				"description": "Get the list of Credentials in a CredentialList. The passwords for the Credentials are intentionally not returned so as to protect them.",
-				"operationId": "get-the-list-of-credentials-in-a-credentiallist-the-passwords-for-the-credentials-are-intentionally-",
-				"parameters": [{
-					"in": "path",
-					"name": "AccountSid"
-				},
-				{
-					"in": "path",
-					"name": "CLSid"
-				},
-				{
-					"in": "path",
-					"name": "mediaTypeExtension",
-					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				},
-				"tags": [""],
-				"security": []
-			},
-			"post": {
-				"summary": "",
-				"description": "Add a Credential to the CredentialList.nnWhen creating a Credential, you will POST both a username and password, but only receive the username back in the response. The password is intentionally not returned so as to protect it.n",
-				"operationId": "add-a-credential-to-the-credentiallistwhen-creating-a-credential-you-will-post-both-a-username-and-p",
-				"parameters": [{
-					"in": "path",
-					"name": "AccountSid"
-				},
-				{
-					"in": "path",
-					"name": "CLSid"
-				},
-				{
-					"in": "path",
-					"name": "mediaTypeExtension",
-					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				},
-				"tags": [""],
-				"security": []
-			}
-		},
-		"/Accounts/{AccountSid}/SIP/CredentialLists/{CLSid}{mediaTypeExtension}": {
+		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings/{ALSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
-				"description": "Delete a CredentialList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.",
-				"operationId": "delete-a-credentiallist-from-your-account-it-can-only-be-deleted-if-no-domains-are-mapped-to-it-if-y",
+				"description": "Remove a mapping from this domain.",
+				"operationId": "remove-a-mapping-from-this-domain",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
 				},
 				{
 					"in": "path",
-					"name": "CLSid"
+					"name": "ALSid"
 				},
 				{
 					"in": "path",
 					"name": "mediaTypeExtension",
 					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
 				}],
 				"responses": {
 					"200": {
@@ -181,45 +127,24 @@
 			},
 			"get": {
 				"summary": "",
-				"description": "Get a credential list instance resource",
-				"operationId": "get-a-credential-list-instance-resource",
+				"description": "Return a specific IpAccessControlListMapping instance by Sid.",
+				"operationId": "return-a-specific-ipaccesscontrollistmapping-instance-by-sid",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
 				},
 				{
 					"in": "path",
-					"name": "CLSid"
+					"name": "ALSid"
 				},
 				{
 					"in": "path",
 					"name": "mediaTypeExtension",
 					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
-				}],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				},
-				"tags": [""],
-				"security": []
-			},
-			"post": {
-				"summary": "",
-				"description": "Change the FriendlyName of the list",
-				"operationId": "change-the-friendlyname-of-the-list",
-				"parameters": [{
-					"in": "path",
-					"name": "AccountSid"
 				},
 				{
 					"in": "path",
-					"name": "CLSid"
-				},
-				{
-					"in": "path",
-					"name": "mediaTypeExtension",
-					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+					"name": "SipDomainSid"
 				}],
 				"responses": {
 					"200": {
@@ -230,11 +155,138 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/CredentialLists{mediaTypeExtension}": {
+		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
-				"description": "Gets a list of Credential Lists for an account",
-				"operationId": "gets-a-list-of-credential-lists-for-an-account",
+				"description": "Return the IpAccessControlListMappings that are associated to this domain.",
+				"operationId": "return-the-ipaccesscontrollistmappings-that-are-associated-to-this-domain",
+				"parameters": [{
+					"in": "path",
+					"name": "AccountSid"
+				},
+				{
+					"in": "path",
+					"name": "mediaTypeExtension"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			},
+			"post": {
+				"summary": "",
+				"description": "Map an IpAccessControlList to this domain.",
+				"operationId": "map-an-ipaccesscontrollist-to-this-domain",
+				"parameters": [{
+					"in": "path",
+					"name": "AccountSid"
+				},
+				{
+					"in": "path",
+					"name": "mediaTypeExtension"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}{mediaTypeExtension}": {
+			"delete": {
+				"summary": "",
+				"description": "Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.",
+				"operationId": "delete-a-domain-if-you-have-created-subdomains-of-a-domain-you-will-not-be-able-to-delete-the-domain",
+				"parameters": [{
+					"in": "path",
+					"name": "AccountSid"
+				},
+				{
+					"in": "path",
+					"name": "mediaTypeExtension",
+					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			},
+			"get": {
+				"summary": "",
+				"description": "Return a specific instance by Sid.",
+				"operationId": "return-a-specific-instance-by-sid",
+				"parameters": [{
+					"in": "path",
+					"name": "AccountSid"
+				},
+				{
+					"in": "path",
+					"name": "mediaTypeExtension",
+					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			},
+			"post": {
+				"summary": "",
+				"description": "Update the attributes of a domain.",
+				"operationId": "update-the-attributes-of-a-domain",
+				"parameters": [{
+					"in": "path",
+					"name": "AccountSid"
+				},
+				{
+					"in": "path",
+					"name": "mediaTypeExtension",
+					"description": "By default, Twilios REST API returns XML. You may obtain CSV, JSON or HTML by appending .csv, .json, or .html.n"
+				},
+				{
+					"in": "path",
+					"name": "SipDomainSid"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"tags": [""],
+				"security": []
+			}
+		},
+		"/Accounts/{AccountSid}/SIP/Domains{mediaTypeExtension}": {
+			"get": {
+				"summary": "",
+				"description": "Returns a paged list of the domains for an account.",
+				"operationId": "returns-a-paged-list-of-the-domains-for-an-account",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
@@ -254,8 +306,8 @@
 			},
 			"post": {
 				"summary": "",
-				"description": "Create a new Credential List.",
-				"operationId": "create-a-new-credential-list",
+				"description": "Creates a new Domain and returns its instance resource. You must pick a unique domain name that ends in .sip.twilio.com.nAfter creating a Domain, you must map it to an authentication method before the domain is ready to receive traffic.n",
+				"operationId": "creates-a-new-domain-and-returns-its-instance-resource-you-must-pick-a-unique-domain-name-that-ends-",
 				"parameters": [{
 					"in": "path",
 					"name": "AccountSid"
