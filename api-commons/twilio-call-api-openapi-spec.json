@@ -1,12 +1,12 @@
 {
 	"swagger": "2.0",
 	"info": {
-		"title": "No Title",
-		"version": null
+		"title": "Twilio Call API",
+		"description": "This is the description of the API",
+		"version": 1
 	},
 	"schemes": ["http"],
 	"produces": ["application/json"],
-	"consumes": ["application/json"],
 	"paths": {
 		"/Accounts/{AccountSid}/Calls/{CallSid}/Notifications{mediaTypeExtension}": {
 			"get": {
