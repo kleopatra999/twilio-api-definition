@@ -1,6 +1,6 @@
 - swagger: "2.0"
   info:
-    title: Twilio Conferences API
+    title: Twilio Connected Apps API
     description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
       company based in San Francisco, California. Twilio allows software developers
       to programmatically make and receive phone calls and send and receive text messages
@@ -17,39 +17,16 @@
   consumes:
   - application/json
   paths:
-    /Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}{mediaTypeExtension}:
-      delete:
-        summary: ""
-        description: Kick this participant from the conference.
-        operationId: kick-this-participant-from-the-conference
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: CallSid
-        - in: path
-          name: ConferenceSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
+    /Accounts/{AccountSid}/ConnectApps/{ConnectAppSid}{mediaTypeExtension}:
       get:
         summary: ""
-        description: Returns a representation of this participant.
-        operationId: returns-a-representation-of-this-participant
+        description: Get the properties of a Connect App.
+        operationId: get-the-properties-of-a-connect-app
         parameters:
         - in: path
           name: AccountSid
         - in: path
-          name: CallSid
-        - in: path
-          name: ConferenceSid
+          name: ConnectAppSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -62,15 +39,15 @@
         security: []
       post:
         summary: ""
-        description: Updates the status of a participant.
-        operationId: updates-the-status-of-a-participant
+        description: Tries to update the Connect Apps properties, and returns the updatednresource
+          representation if successful. The returned response is identicalnto that returned
+          above when making a GET request.n
+        operationId: tries-to-update-the-connect-apps-properties-and-returns-the-updatedresource-representation-if-succes
         parameters:
         - in: path
           name: AccountSid
         - in: path
-          name: CallSid
-        - in: path
-          name: ConferenceSid
+          name: ConnectAppSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -81,52 +58,12 @@
         tags:
         - ""
         security: []
-    /Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants{mediaTypeExtension}:
+    /Accounts/{AccountSid}/ConnectApps{mediaTypeExtension}:
       get:
         summary: ""
-        description: Returns the list of participants in the conference identified byn{ConferenceSid}.n
-        operationId: returns-the-list-of-participants-in-the-conference-identified-byconferencesid
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: ConferenceSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /Accounts/{AccountSid}/Conferences/{ConferenceSid}{mediaTypeExtension}:
-      get:
-        summary: ""
-        description: Returns a representation of the conference identified by {ConferenceSid}.n
-        operationId: returns-a-representation-of-the-conference-identified-by-conferencesid
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: ConferenceSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /Accounts/{AccountSid}/Conferences{mediaTypeExtension}:
-      get:
-        summary: ""
-        description: Returns a list of conferences within an account. The list includes
-          pagingninformation.n
-        operationId: returns-a-list-of-conferences-within-an-account-the-list-includes-paginginformation
+        description: Returns a list of Connect App resource representations, each representingna
+          Connect App in your account. The list includes paging information.n
+        operationId: returns-a-list-of-connect-app-resource-representations-each-representinga-connect-app-in-your-accoun
         parameters:
         - in: path
           name: AccountSid
@@ -134,136 +71,6 @@
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
             JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /{AccountSid}/Conferences.{format}:
-      get:
-        summary: GetConferenceListForAccount
-        description: GetConferenceListForAccount
-        operationId: getconferencelistforaccount
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /{AccountSid}/Conferences/{ConferenceSid}.{format}:
-      get:
-        summary: GetConference
-        description: GetConference
-        operationId: getconference
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: ConferenceSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /{AccountSid}/Conferences/{ConferenceSid}/Participants.{format}:
-      get:
-        summary: GetParticipantListForConference
-        description: GetParticipantListForConference
-        operationId: getparticipantlistforconference
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: ConferenceSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}.{format}:
-      delete:
-        summary: DeleteParticipant
-        description: DeleteParticipant
-        operationId: deleteparticipant
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: CallSid
-          type: string
-        - in: path
-          name: ConferenceSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-      get:
-        summary: GetParticipantForConference
-        description: GetParticipantForConference
-        operationId: getparticipantforconference
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: CallSid
-          type: string
-        - in: path
-          name: ConferenceSid
-          type: string
-        - in: path
-          name: format
-          type: string
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-      post:
-        summary: MuteParticipant
-        description: MuteParticipant
-        operationId: muteparticipant
-        parameters:
-        - in: path
-          name: AccountSid
-          type: string
-        - in: path
-          name: CallSid
-          type: string
-        - in: path
-          name: ConferenceSid
-          type: string
-        - in: path
-          name: format
-          type: string
         responses:
           200:
             description: OK
