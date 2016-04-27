@@ -1,6 +1,6 @@
 - swagger: "2.0"
   info:
-    title: Twilio SIP IP Access Control Lists API
+    title: Twilio SMS Short Codes API
     description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
       company based in San Francisco, California. Twilio allows software developers
       to programmatically make and receive phone calls and send and receive text messages
@@ -17,81 +17,57 @@
   consumes:
   - application/json
   paths:
-    /Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}{mediaTypeExtension}:
-      delete:
-        summary: ""
-        description: Deletes an IP address entry from the list.
-        operationId: deletes-an-ip-address-entry-from-the-list
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: IpAddressSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
+    /Accounts/{AccountSid}/SMS/ShortCodes/{ShortCodeSid}{mediaTypeExtension}:
       get:
-        summary: ""
-        description: Return a single IP Address resource.
-        operationId: return-a-single-ip-address-resource
+        summary: Get SMS Short Code Media
+        description: Get a single message.
+        operationId: get-a-single-message
         parameters:
         - in: path
           name: AccountSid
         - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: IpAddressSid
-        - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
             JSON or HTML by appending .csv, .json, or .html.n
+        - in: path
+          name: ShortCodeSid
         responses:
           200:
             description: OK
         tags:
-        - ""
+        - SMS
+        - ' Short Codes'
         security: []
       post:
-        summary: ""
-        description: Change the description or IP address of a given IpAddress instance
-          resource
-        operationId: change-the-description-or-ip-address-of-a-given-ipaddress-instance-resource
+        summary: Add SMS Short Code Media
+        description: Tries to update the shortcodes properties, and returns the updatednresource
+          representation if successful.n
+        operationId: tries-to-update-the-shortcodes-properties-and-returns-the-updatedresource-representation-if-successf
         parameters:
         - in: path
           name: AccountSid
         - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: IpAddressSid
-        - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
             JSON or HTML by appending .csv, .json, or .html.n
+        - in: path
+          name: ShortCodeSid
         responses:
           200:
             description: OK
         tags:
-        - ""
+        - SMS
+        - ' Short Codes'
         security: []
-    /Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses{mediaTypeExtension}:
+    /Accounts/{AccountSid}/SMS/ShortCodes{mediaTypeExtension}:
       get:
-        summary: ""
-        description: List the IP Addresses contained in this list.
-        operationId: list-the-ip-addresses-contained-in-this-list
+        summary: Get SMS Short Code Media
+        description: Returns a list of ShortCode resource representations, each representing
+          anshort code within your account. The list includes paging information.n
+        operationId: returns-a-list-of-shortcode-resource-representations-each-representing-ashort-code-within-your-accou
         parameters:
         - in: path
           name: AccountSid
-        - in: path
-          name: IpAccessControlListSid
         - in: path
           name: mediaTypeExtension
           description: By default, Twilios REST API returns XML. You may obtain CSV,
@@ -100,119 +76,66 @@
           200:
             description: OK
         tags:
-        - ""
+        - SMS
+        - ' Short Codes'
+        security: []
+    /{AccountSid}/SMS/Messages.{format}:
+      get:
+        summary: GetSMSList
+        description: GetSMSList
+        operationId: getsmslist
+        parameters:
+        - in: path
+          name: AccountSid
+          type: string
+        - in: path
+          name: format
+          type: string
+        responses:
+          200:
+            description: OK
+        tags:
+        - SMS
+        - ' Short Codes'
         security: []
       post:
-        summary: ""
-        description: Add an IP Address to the list with a description.
-        operationId: add-an-ip-address-to-the-list-with-a-description
+        summary: SendSMS
+        description: SendSMS
+        operationId: sendsms
         parameters:
         - in: path
           name: AccountSid
+          type: string
         - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
+          name: format
+          type: string
         responses:
           200:
             description: OK
         tags:
-        - ""
+        - SMS
+        - ' Short Codes'
         security: []
-    /Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}{mediaTypeExtension}:
-      delete:
-        summary: ""
-        description: Delete an IpAccessControlList from your account. It can only be
-          deleted if no domains are mapped to it. If you attempt to delete one that
-          is mapped to a domain, you will receive an error.
-        operationId: delete-an-ipaccesscontrollist-from-your-account-it-can-only-be-deleted-if-no-domains-are-mapped-to-i
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
+    /{AccountSid}/SMS/Messages/{SMSMessageSid}.{format}:
       get:
-        summary: ""
-        description: Return a specific IpAccessControlList resource.
-        operationId: return-a-specific-ipaccesscontrollist-resource
+        summary: GetSMS
+        description: GetSMS
+        operationId: getsms
         parameters:
         - in: path
           name: AccountSid
+          type: string
         - in: path
-          name: IpAccessControlListSid
+          name: format
+          type: string
         - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
+          name: SMSMessageSid
+          type: string
         responses:
           200:
             description: OK
         tags:
-        - ""
-        security: []
-      post:
-        summary: ""
-        description: Rename an IpAccessControlList.
-        operationId: rename-an-ipaccesscontrollist
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: IpAccessControlListSid
-        - in: path
-          name: mediaTypeExtension
-          description: By default, Twilios REST API returns XML. You may obtain CSV,
-            JSON or HTML by appending .csv, .json, or .html.n
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-    /Accounts/{AccountSid}/SIP/IpAccessControlLists{mediaTypeExtension}:
-      get:
-        summary: ""
-        description: Return a paged list of all IpAccessControlLists under this account.
-        operationId: return-a-paged-list-of-all-ipaccesscontrollists-under-this-account
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: mediaTypeExtension
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
-        security: []
-      post:
-        summary: ""
-        description: Create a new IpAccessControlList resource.nnWhen created, the list
-          will contain no IP addresses. You will need to add IP addresses to the list
-          for it to be active. To add IP addresses, you will need to POST to the IpAddresses
-          List subresource.n
-        operationId: create-a-new-ipaccesscontrollist-resourcewhen-created-the-list-will-contain-no-ip-addresses-you-will
-        parameters:
-        - in: path
-          name: AccountSid
-        - in: path
-          name: mediaTypeExtension
-        responses:
-          200:
-            description: OK
-        tags:
-        - ""
+        - SMS
+        - ' Short Codes'
         security: []
   definitions: []
