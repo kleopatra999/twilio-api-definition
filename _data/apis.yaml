@@ -10,11 +10,7 @@ url: twilio.stack.networkapis.json
 specificationVersion: "0.14"
 apis:
 - name: Twilio Account API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: ""
@@ -24,11 +20,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-account-api-openapi-spec.json
 - name: Twilio Application API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: ""
@@ -38,11 +30,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-application-api-openapi-spec.json
 - name: Twilio Available Phone Numbers API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: ""
@@ -52,9 +40,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-available-phone-numbers-api-openapi-spec.json
 - name: Twilio Call API
-  description: Twilio Client lets any browser, phone or tablet talk using only a data
-    connection. And best of all, your existing applications will already work with
-    Twilio Client.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: https://www.twilio.com/docs/client
   baseURL: https://www.twilio.com/docs/client
@@ -64,11 +50,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-call-api-openapi-spec.json
 - name: Twilio Client API
-  description: Twilio Telegram is a service for sending short, telegraph-style messages
-    anywhere in the United States. All telegraph communiques are hand delivered by
-    Task Rabbit. Messages can be sent to one friend, or tens of friends and associates.
-    Pricing is in simple, pay-per-message format. Access to Twilio Telegram is available
-    via REST API.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: https://www.twilio.com/client/api
   baseURL: https://www.twilio.com/docs/client
@@ -76,11 +58,7 @@ apis:
   - Twilio Stack
   properties: []
 - name: Twilio Conferences API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -90,11 +68,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-conferences-api-openapi-spec.json
 - name: Twilio Connected Apps API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -104,11 +78,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-connected-apps-api-openapi-spec.json
 - name: Twilio Incoming Phone Numbers API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -118,8 +88,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-incoming-phone-numbers-api-openapi-spec.json
 - name: Twilio Messaging API
-  description: |
-    Twilio SMS allows you to make and receive SMS messages using local phone numbers in several countries around the world.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: https://www.twilio.com/docs/api/rest/message
   baseURL: https://www.twilio.com/docs/client
@@ -129,11 +98,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-messaging-api-openapi-spec.json
 - name: Twilio Notifications API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -143,11 +108,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-notifications-api-openapi-spec.json
 - name: Twilio Outgoing Caller Ids API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -157,11 +118,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-outgoing-caller-ids-api-openapi-spec.json
 - name: Twilio Queues API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -171,11 +128,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-queues-api-openapi-spec.json
 - name: Twilio Recordings API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -185,11 +138,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-recordings-api-openapi-spec.json
 - name: Twilio Sandbox API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -199,11 +148,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-sandbox-api-openapi-spec.json
 - name: Twilio SIP Credential Lists API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -213,11 +158,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-sip-credential-lists-api-openapi-spec.json
 - name: Twilio SIP Domains API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -227,11 +168,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-sip-domains-api-openapi-spec.json
 - name: Twilio SIP IP Access Control Lists API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -241,11 +178,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-sip-ip-access-control-lists-api-openapi-spec.json
 - name: Twilio SMS Short Codes API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -255,11 +188,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-sms-short-codes-api-openapi-spec.json
 - name: Twilio Transcription API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -269,11 +198,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-transcription-api-openapi-spec.json
 - name: Twilio Usage API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: ""
   baseURL: https://www.twilio.com/docs/client
@@ -283,11 +208,7 @@ apis:
   - type: x-openapi-spec
     url: api-commons/twilio-usage-api-openapi-spec.json
 - name: Twilio Voice API
-  description: Twilio is a cloud communications Infrastructure as a Service(IaaS)
-    company based in San Francisco, California. Twilio allows software developers
-    to programmatically make and receive phone calls and send and receive text messages
-    using its web service APIs. Twilio's services are accessed over HTTP and are billed
-    based on usage.
+  description: ""
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png
   humanURL: https://www.twilio.com/voice/api
   baseURL: https://www.twilio.com/docs/client
