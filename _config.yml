@@ -70,6 +70,42 @@ navigation:
     size2: 0
     padding: 0
     decorate: 0
+  - label1: Paths
+    link1: /tools/manage-paths/
+    size1: 70
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 0
+    decorate: 0
+  - label1: Summaries
+    link1: /tools/manage-summaries/
+    size1: 70
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 0
+    decorate: 0
+  - label1: Tags
+    link1: /tools/manage-tags/
+    size1: 70
+    extend: 1
+    label2: Cloud
+    link2: /tools/tag-cloud/
+    size2: 50
+    padding: 0
+    decorate: 0
+  - label1: Parameters
+    link1: /tools/manage-parameters/
+    size1: 70
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 0
+    decorate: 0
   - label1: Comment / Issues
     link1: https://github.com/api-stack/twilio-api-definition/issues
     size1: 70
