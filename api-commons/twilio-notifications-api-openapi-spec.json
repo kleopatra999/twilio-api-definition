@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Notifications/{NotificationSid}{mediaTypeExtension}": {
+		"/Notifications/{NotificationSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Deletes the notification identified by {NotificationSid} from an accounts log.n",
@@ -64,7 +64,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Notifications{mediaTypeExtension}": {
+		"/Notifications{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of notifications generated for an account. The list includesnpaging information.n",

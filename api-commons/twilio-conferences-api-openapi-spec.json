@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants/{CallSid}{mediaTypeExtension}": {
+		"/Conferences/{ConferenceSid}/Participants/{CallSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Kick this participant from the conference.",
@@ -101,7 +101,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Conferences/{ConferenceSid}/Participants{mediaTypeExtension}": {
+		"/Conferences/{ConferenceSid}/Participants{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns the list of participants in the conference identified byn{ConferenceSid}.n",
@@ -128,7 +128,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Conferences/{ConferenceSid}{mediaTypeExtension}": {
+		"/Conferences/{ConferenceSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a representation of the conference identified by {ConferenceSid}.n",
@@ -155,7 +155,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Conferences{mediaTypeExtension}": {
+		"/Conferences{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of conferences within an account. The list includes pagingninformation.n",

@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/IncomingPhoneNumbers/Local{mediaTypeExtension}": {
+		"/IncomingPhoneNumbers/Local{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of local <IncomingPhoneNumber> elements, each representing a local (not toll-free) phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out toll-free numbers.",
@@ -54,7 +54,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/IncomingPhoneNumbers/Mobile{mediaTypeExtension}": {
+		"/IncomingPhoneNumbers/Mobile{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of local <IncomingPhoneNumber> elements, each representing a mobile phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out local and toll free numbers.",
@@ -96,7 +96,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree{mediaTypeExtension}": {
+		"/IncomingPhoneNumbers/TollFree{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of local <IncomingPhoneNumber> elements, each representing a toll-free phone number given to your account, under an <IncomingPhoneNumbers> list element that includes paging information. Works exactly the same as the IncomingPhoneNumber resource, but filters out all numbers that arent toll-free.",
@@ -138,7 +138,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/IncomingPhoneNumbers/{IncomingPhoneNumberSid}{mediaTypeExtension}": {
+		"/IncomingPhoneNumbers/{IncomingPhoneNumberSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Release this phone number from your account. Twilio will no longer answerncalls to this number, and you will stop being billed the monthly phonennumber fee. The phone number will eventually be recycled and potentiallyngiven to another customer, so use with care. If you make a mistake, contacnus. We may be able to give you the number back.n",
@@ -240,7 +240,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/IncomingPhoneNumbers{mediaTypeExtension}": {
+		"/IncomingPhoneNumbers{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of IncomingPhoneNumber resource representations, eachnrepresenting a phone number given to your account. The list includes pagingninformation.n",

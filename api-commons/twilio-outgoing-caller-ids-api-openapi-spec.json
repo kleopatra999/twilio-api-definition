@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/OutgoingCallerIds/{OutgoingCallerIdSid}{mediaTypeExtension}": {
+		"/OutgoingCallerIds/{OutgoingCallerIdSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "Delete Outgoing Caller Id",
 				"description": "Deletes the caller ID from the account. Returns an HTTP 204 response ifnsuccessful, with no body.n",
@@ -114,7 +114,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/OutgoingCallerIds{mediaTypeExtension}": {
+		"/OutgoingCallerIds{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Outgoing Caller Ids",
 				"description": "Returns a list of OutgoingCallerId resource representations, each representingna Caller ID number valid for an account. The list includes paging information.n",

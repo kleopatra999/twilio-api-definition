@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Recordings/{RecordingSid}/Transcriptions{mediaTypeExtension}": {
+		"/Recordings/{RecordingSid}/Transcriptions{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a set of Transcription resource representations that includes pagingninformation.n",
@@ -39,7 +39,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Recordings/{RecordingSid}{mediaTypeExtension}": {
+		"/Recordings/{RecordingSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Deletes a recording  from your account.",
@@ -89,7 +89,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Recordings{mediaTypeExtension}": {
+		"/Recordings{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of Recording resource representations, each representing anrecording generated during the course of a phone call.n",

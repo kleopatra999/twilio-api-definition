@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Applications/{ApplicationSid}{mediaTypeExtension}": {
+		"/Applications/{ApplicationSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "Delete Application",
 				"description": "Delete this application.",
@@ -89,7 +89,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Applications{mediaTypeExtension}": {
+		"/Applications{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Applications",
 				"description": "Returns a list of Application resource representations, each representingnan application within your account. The list includes paging information.n",
@@ -133,7 +133,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}{mediaTypeExtension}": {
+		"/AuthorizedConnectApps/{ConnectAppSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Authorized Connected App",
 				"description": "Get the properties of the authorized application.",
@@ -160,7 +160,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/AuthorizedConnectApps{mediaTypeExtension}": {
+		"/AuthorizedConnectApps{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Authorized Connected Apps",
 				"description": "Returns a list of Connect App resource representations, each representing anConnect App youve authorized to access your account. The list includesnpaging information.n",

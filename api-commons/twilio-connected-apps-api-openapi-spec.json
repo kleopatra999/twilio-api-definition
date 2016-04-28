@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/ConnectApps/{ConnectAppSid}{mediaTypeExtension}": {
+		"/ConnectApps/{ConnectAppSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Get the properties of a Connect App.",
@@ -64,7 +64,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/ConnectApps{mediaTypeExtension}": {
+		"/ConnectApps{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a list of Connect App resource representations, each representingna Connect App in your account. The list includes paging information.n",

@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings/{CLSid}{mediaTypeExtension}": {
+		"/SIP/Domains/{SipDomainSid}/CredentialListMappings/{CLSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Remove a CredentialListMapping from a domain",
@@ -43,7 +43,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/CredentialListMappings{mediaTypeExtension}": {
+		"/SIP/Domains/{SipDomainSid}/CredentialListMappings{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Get the user lists mapped to this domain.",
@@ -95,7 +95,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings/{ALSid}{mediaTypeExtension}": {
+		"/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings/{ALSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Remove a mapping from this domain.",
@@ -155,7 +155,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings{mediaTypeExtension}": {
+		"/SIP/Domains/{SipDomainSid}/IpAccessControlListMappings{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Return the IpAccessControlListMappings that are associated to this domain.",
@@ -205,7 +205,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/Domains/{SipDomainSid}{mediaTypeExtension}": {
+		"/SIP/Domains/{SipDomainSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Delete a domain. If you have created subdomains of a domain, you will not be able to delete the domain until you first delete all subdomains of it.",
@@ -282,7 +282,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/Domains{mediaTypeExtension}": {
+		"/SIP/Domains{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a paged list of the domains for an account.",

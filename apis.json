@@ -6,7 +6,7 @@
 	"tags": ["Twilio Stack"],
 	"created": "2016-04-26",
 	"modified": "2016-04-26",
-	"url": "twilio.stack.networkapis.json",
+	"url": "apis.json",
 	"specificationVersion": "0.14",
 	"apis": [{
 		"name": "Twilio Account API",
@@ -33,6 +33,30 @@
 		}]
 	},
 	{
+		"name": "Twilio Addresses API",
+		"description": "",
+		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
+		"humanURL": "",
+		"baseURL": "",
+		"tags": ["Twilio Stack"],
+		"properties": [{
+			"type": "x-openapi-spec",
+			"url": "api-commons/twilio-addresses-api-openapi-spec.json"
+		}]
+	},	
+	{
+		"name": "Twilio API Key API",
+		"description": "",
+		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
+		"humanURL": "",
+		"baseURL": "",
+		"tags": ["Twilio Stack"],
+		"properties": [{
+			"type": "x-openapi-spec",
+			"url": "api-commons/twilio-api-keys-api-openapi-spec.json"
+		}]
+	},		
+	{
 		"name": "Twilio Available Phone Numbers API",
 		"description": "",
 		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
@@ -56,6 +80,18 @@
 			"url": "api-commons/twilio-call-api-openapi-spec.json"
 		}]
 	},
+	{
+		"name": "Twilio Call Feedback API",
+		"description": "",
+		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
+		"humanURL": "",
+		"baseURL": "",
+		"tags": ["Twilio Stack"],
+		"properties": [{
+			"type": "x-openapi-spec",
+			"url": "api-commons/twilio-call-feedback-api-openapi-spec.json"
+		}]
+	},	
 	{
 		"name": "Twilio Client API",
 		"description": "",
@@ -222,6 +258,18 @@
 		}]
 	},
 	{
+		"name": "Twilio Token API",
+		"description": "",
+		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
+		"humanURL": "",
+		"baseURL": "",
+		"tags": ["Twilio Stack"],
+		"properties": [{
+			"type": "x-openapi-spec",
+			"url": "api-commons/twilio-token-api-openapi-spec.json"
+		}]
+	},		
+	{
 		"name": "Twilio Transcription API",
 		"description": "",
 		"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
@@ -382,10 +430,7 @@
 		"type": "x-api-plan",
 		"url": "api-commons/api-plan.json"
 	}],
-	"include": [{
-		"name": "Parent",
-		"url": "twilio.stack.networkapis.json"
-	}],
+	"include": [],
 	"maintainers": [{
 		"FN": "Kin Lane",
 		"x-twitter": "apievangelist",

@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Transcriptions/{TranscriptionSid}{mediaTypeExtension}": {
+		"/Transcriptions/{TranscriptionSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Deletes a transcription from your account.",
@@ -64,7 +64,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Transcriptions{mediaTypeExtension}": {
+		"/Transcriptions{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Returns a set of Transcription resource representations that includes pagingninformation.n",

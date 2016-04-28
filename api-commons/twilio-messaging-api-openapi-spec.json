@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Messages/{MessageSid}/Media/{MediaSid}{mediaTypeExtension}": {
+		"/Messages/{MessageSid}/Media/{MediaSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Message Media",
 				"description": "Without an extension, the media is returned using the mime-type provided when the media was generated.",
@@ -44,7 +44,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Messages/{MessageSid}/Media{mediaTypeExtension}": {
+		"/Messages/{MessageSid}/Media{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Message Media",
 				"description": "Returns a list of media associated with your message.",
@@ -72,7 +72,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Messages/{MessageSid}{mediaTypeExtension}": {
+		"/Messages/{MessageSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Message Media",
 				"description": "Returns a single message specified by the provided {MessageSid}.n",
@@ -100,7 +100,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Messages{mediaTypeExtension}": {
+		"/Messages{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Message Media",
 				"description": "Returns a list of messages associated with your account. The list includes paging information.",

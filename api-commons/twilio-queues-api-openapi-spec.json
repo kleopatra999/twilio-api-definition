@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/Queues/{QueueSid}/Members/Front{mediaTypeExtension}": {
+		"/Queues/{QueueSid}/Members/Front{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Queue Members In Front",
 				"description": "Get a front member.",
@@ -64,7 +64,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}{mediaTypeExtension}": {
+		"/Queues/{QueueSid}/Members/{CallSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Queue Members",
 				"description": "Get a specific member.",
@@ -124,7 +124,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Queues/{QueueSid}/Members{mediaTypeExtension}": {
+		"/Queues/{QueueSid}/Members{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Queue Members",
 				"description": "Returns the list of members in the queue identified by {QueueSid}.",
@@ -151,7 +151,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Queues/{QueueSid}{mediaTypeExtension}": {
+		"/Queues/{QueueSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "Delete Queue Members",
 				"description": "The DELETE method allows you to remove a Queue. Only empty queues arendeletable.n",
@@ -228,7 +228,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/Queues{mediaTypeExtension}": {
+		"/Queues{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get Queues",
 				"description": "Returns a list of queues within an account. The list includes pagingninformation.n",

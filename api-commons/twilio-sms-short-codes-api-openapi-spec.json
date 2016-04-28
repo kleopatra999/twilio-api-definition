@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/SMS/ShortCodes/{ShortCodeSid}{mediaTypeExtension}": {
+		"/SMS/ShortCodes/{ShortCodeSid}{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get SMS Short Code Media",
 				"description": "Get a single message.",
@@ -66,7 +66,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SMS/ShortCodes{mediaTypeExtension}": {
+		"/SMS/ShortCodes{mediaTypeExtension}": {
 			"get": {
 				"summary": "Get SMS Short Code Media",
 				"description": "Returns a list of ShortCode resource representations, each representing anshort code within your account. The list includes paging information.n",

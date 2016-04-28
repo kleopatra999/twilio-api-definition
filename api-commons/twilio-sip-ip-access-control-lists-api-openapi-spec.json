@@ -7,12 +7,12 @@
 		"version": "2010-04-01"
 	},
 	"host": "api.twilio.com",
-	"basePath": "/",
+	"basePath": "/Accounts/{AccountSid}/",
 	"schemes": ["http"],
 	"produces": ["application/json"],
 	"consumes": ["application/json"],
 	"paths": {
-		"/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}{mediaTypeExtension}": {
+		"/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses/{IpAddressSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Deletes an IP address entry from the list.",
@@ -101,7 +101,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses{mediaTypeExtension}": {
+		"/SIP/IpAccessControlLists/{IpAccessControlListSid}/IpAddresses{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "List the IP Addresses contained in this list.",
@@ -153,7 +153,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/IpAccessControlLists/{IpAccessControlListSid}{mediaTypeExtension}": {
+		"/SIP/IpAccessControlLists/{IpAccessControlListSid}{mediaTypeExtension}": {
 			"delete": {
 				"summary": "",
 				"description": "Delete an IpAccessControlList from your account. It can only be deleted if no domains are mapped to it. If you attempt to delete one that is mapped to a domain, you will receive an error.",
@@ -230,7 +230,7 @@
 				"security": []
 			}
 		},
-		"/Accounts/{AccountSid}/SIP/IpAccessControlLists{mediaTypeExtension}": {
+		"/SIP/IpAccessControlLists{mediaTypeExtension}": {
 			"get": {
 				"summary": "",
 				"description": "Return a paged list of all IpAccessControlLists under this account.",

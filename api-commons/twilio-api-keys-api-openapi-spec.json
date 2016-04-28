@@ -1,0 +1,54 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Twilio API Key API",
+    "description": "",
+    "termsOfService": "https://www.twilio.com/legal/tos",
+    "version": "2010-04-01"
+  },
+  "host": "api.twilio.com",
+  "basePath": "/Accounts/{AccountSid}/",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/Keys/{API KeySid}": {
+      "get": {
+        "summary": "",
+        "description": "",
+        "operationId": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "API Keys"
+        ],
+        "security": []
+      }
+    },
+    "/Keys": {
+      "get": {
+        "summary": "",
+        "description": "",
+        "operationId": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "API Keys"
+        ],
+        "security": []
+      }
+    }
+  },
+  "definitions": []
+}
