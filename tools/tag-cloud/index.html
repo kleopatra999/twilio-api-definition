@@ -33,7 +33,7 @@ function processAPIs($singleAPIs)
         $FullCount = $FullCount + 1;
 
         if (!/^(f|ht)tps?:\/\//i.test(url)) {
-              url = "{{ site.url }}" + url;
+              $url = "{{ site.url }}" + $url;
            }
 
         var loadIt3 = $.getJSON($url, function($openapispec) {

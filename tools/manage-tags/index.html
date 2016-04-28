@@ -91,9 +91,9 @@ function processAPI($singleAPIs)
             if($type=='x-openapi-spec')
                 {
 
-                if (!/^(f|ht)tps?:\/\//i.test(url)) {
-                      url = "{{ site.url }}" + url;
-                   }
+                  if (!/^(f|ht)tps?:\/\//i.test(url)) {
+                        $url = "{{ site.url }}" + $url;
+                     }
 
                 var jqxhr3 = $.getJSON($url, function($openapispec) {
 

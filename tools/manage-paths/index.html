@@ -133,7 +133,7 @@ function processAPI($singleAPIs)
                 {
 
                 if (!/^(f|ht)tps?:\/\//i.test(url)) {
-                      url = "{{ site.url }}" + url;
+                      $url = "{{ site.url }}" + $url;
                    }
 
                 var jqxhr3 = $.getJSON($url, function($openapispec) {
