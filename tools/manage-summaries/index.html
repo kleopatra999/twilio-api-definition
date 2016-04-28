@@ -92,6 +92,11 @@ function processAPI($singleAPIs)
             // End OpenAPI Spec
             if($type=='x-openapi-spec')
                 {
+
+                if (!/^(f|ht)tps?:\/\//i.test(url)) {
+                      url = "{{ site.url }}" + url;
+                   }
+
                 var jqxhr3 = $.getJSON($url, function($openapispec) {
 
                     $openapi_spec_store[$openapi_spec_count] = $openapispec;
