@@ -1,12 +1,12 @@
 {
 	"name": "Twilio",
-	"description": "",
-	"image": "",
+	"description": "This is my working stack.network project for defining the Twilio API definition.",
+	"image": "http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/twilio-logo.png",
 	"x-open-ranking": "0",
-	"tags": ["Twilio Stack"],
+	"tags": ["SMS","Voice"],
 	"created": "2016-04-26",
-	"modified": "2016-04-26",
-	"url": "apis.json",
+	"modified": "2016-04-28",
+	"url": "http://twilio.stack.network/",
 	"specificationVersion": "0.14",
 	"apis": [{
 		"name": "Twilio Account API",
@@ -43,7 +43,7 @@
 			"type": "x-openapi-spec",
 			"url": "api-commons/twilio-addresses-api-openapi-spec.json"
 		}]
-	},	
+	},
 	{
 		"name": "Twilio API Key API",
 		"description": "",
@@ -55,7 +55,7 @@
 			"type": "x-openapi-spec",
 			"url": "api-commons/twilio-api-keys-api-openapi-spec.json"
 		}]
-	},		
+	},
 	{
 		"name": "Twilio Available Phone Numbers API",
 		"description": "",
@@ -91,7 +91,7 @@
 			"type": "x-openapi-spec",
 			"url": "api-commons/twilio-call-feedback-api-openapi-spec.json"
 		}]
-	},	
+	},
 	{
 		"name": "Twilio Client API",
 		"description": "",
@@ -268,7 +268,7 @@
 			"type": "x-openapi-spec",
 			"url": "api-commons/twilio-token-api-openapi-spec.json"
 		}]
-	},		
+	},
 	{
 		"name": "Twilio Transcription API",
 		"description": "",
