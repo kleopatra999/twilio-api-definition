@@ -106,6 +106,15 @@ navigation:
     size2: 0
     padding: 0
     decorate: 0
+  - label1: Annotations
+    link1: /tools/annotations/
+    size1: 70
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 0
+    decorate: 0
   - label1: Comment / Issues
     link1: https://github.com/api-stack/twilio-api-definition/issues
     size1: 70

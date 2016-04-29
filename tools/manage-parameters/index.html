@@ -14,7 +14,6 @@ var $openapi_spec_store = {};
 
 function viewSpec($openapi_spec_count)
     {
-    console.log("count: " + $openapi_spec_count);
     $newpaths = {};
     $rowcount = 0;
     $howmany = $('#path-' + $openapi_spec_count).length;
@@ -133,30 +132,33 @@ function processAPI($singleAPIs)
                           $summary = '<tr><td align="left" colspan="2" style="padding: 5px 5px 10px 5px; font-size: 16px;"><strong>' + $method + ' ' + $path_name + '</strong></td></tr>';
                           $('#path-' + $openapi_spec_count).append($summary);
 
-                          $.each(methodValue.parameters, function($paramKey, $paramValue) {
-                              $param_in = $paramValue.in;
-                              $param_name = $paramValue.name;
-                              $param_description = $paramValue.description;
-                              if($paramValue.type)
-                                {
-                                $param_type = $paramValue.type;
-                                }
-                               else
-                                {
-                                $param_type = "string";
-                                }
+                          if(methodValue.parameters)
+                            {
+                            $.each(methodValue.parameters, function($paramKey, $paramValue) {
+                                $param_in = $paramValue.in;
+                                $param_name = $paramValue.name;
+                                $param_description = $paramValue.description;
+                                if($paramValue.type)
+                                  {
+                                  $param_type = $paramValue.type;
+                                  }
+                                 else
+                                  {
+                                  $param_type = "string";
+                                  }
 
-                              $html = '<tr>';
-                              $html = $html + '<td><label style="display: inline;">in:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~in" value="' + $param_in + '" /></td>';
-                              $html = $html + '<td><label style="display: inline;">name:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~name" value="' + $param_name + '" /></td>';
-                              $html = $html + '<td><label style="display: inline;">type:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~type" value="' + $param_type + '"  /></td>';
-                              $html = $html + '</tr>';
-                              $('#path-' + $openapi_spec_count).append($html);
+                                $html = '<tr>';
+                                $html = $html + '<td><label style="display: inline;">in:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~in" value="' + $param_in + '" /></td>';
+                                $html = $html + '<td><label style="display: inline;">name:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~name" value="' + $param_name + '" /></td>';
+                                $html = $html + '<td><label style="display: inline;">type:</label><input style="margin-bottom: 10px;" type="text" id="' + $path_name + '~' + $method + '~type" value="' + $param_type + '"  /></td>';
+                                $html = $html + '</tr>';
+                                $('#path-' + $openapi_spec_count).append($html);
 
-                              $html = '<tr><td align="left" valign="top" colspan="3"><textarea rows="3" cols="200" style="width: 100%; height: 100px;" id="' + $path_name + '~' + $method + '~description">' + $param_description + '</textarea></td></tr>';
-                              $('#path-' + $openapi_spec_count).append($html);
+                                $html = '<tr><td align="left" valign="top" colspan="3"><textarea rows="3" cols="200" style="width: 100%; height: 100px;" id="' + $path_name + '~' + $method + '~description">' + $param_description + '</textarea></td></tr>';
+                                $('#path-' + $openapi_spec_count).append($html);
 
-                             });
+                               });
+                             }
                           });
 
                         });
@@ -181,7 +183,6 @@ function loadAPIsJson($apisjsonURL)
       var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
 
         $masterName = apisJSON['name'];
-        console.log($masterName);
         $masterDesc = apisJSON['description'];
         $masterLogo = apisJSON['image'];
         $masterURL = apisJSON['url'];
@@ -195,18 +196,20 @@ function loadAPIsJson($apisjsonURL)
         $masterIncludes = apisJSON['include'];
 
         // Begin Includes
-        $.each($masterIncludes, function(masterKey, masterValue) {
+        if($masterIncludes.length > 0)
+          {
+          $.each($masterIncludes, function(masterKey, masterValue) {
 
-            $includeName = masterValue['name'];
-            $includeRootUrl = masterValue['url'];
-            console.log($includeRootUrl);
+              $includeName = masterValue['name'];
+              $includeRootUrl = masterValue['url'];
 
-            // Begin Pull Include
-            loadAPIsJson($includeRootUrl)
-            // Begin Pull Include
+              // Begin Pull Include
+              loadAPIsJson($includeRootUrl)
+              // Begin Pull Include
 
-            });
-            // End Includes
+              });
+              // End Includes
+            }
         });
         // End Pull Root APIs.json
     }
