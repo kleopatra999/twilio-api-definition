@@ -46,9 +46,9 @@ banner_image_width: 60
 
 # Project
 project_image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
-project_title: Minimum Viable API Operations Definition
-project_summary: This is my micro tool to help you achieve what I'd consider to be a minimum viable presence for your API operations. Answer any question that you can, and generate a report that you can consider as you are crafting your API management road map.
-project_footer: This application runs as a micro tool, which operates 100% client-side, running completely on a Jekyll website, hosted using Github, and Github pages. Visit the about page for more information, if you'd like to support this work feel free to invest and done. If you have any issues, or would like to leave a comment, you can do so via <a href="https://github.com/api-stack/create-your-first-apis-json-file/issues">the project's Github repository</a>.
+project_title: Twilio API Definition
+project_summary: This is my repo dedicated to mapping out the Twilio API as an OpenAPI Spec. My goal is to get as complete of a definition as I can, while also making it openly available on Github. I am doing this for all the APIs included in my Stack.Network research.
+project_footer: If you have a Stripe OpenAPI Spec feel free to submit, or if you see any issues, anything missing feel free to submit a pull request. You can find more API definitions within the master org, as well as at theapistack.com.
 
 # Navigation
 navigation:
