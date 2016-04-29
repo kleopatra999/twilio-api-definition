@@ -1,4 +1,4 @@
-# APIs.json Annotation
-This is a micro tool for annotating APIs. It used Github Issues, and the API to establish comment threads on each API endpoint.
+# Twilio API Definition
+This is a project to define an OpenAPI Spec for the Twilio API.
 
-You can view the site at: http://apis.json.annotation.apievangelist.com/
+You can view the site at: http://twilio.stack.network
