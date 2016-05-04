@@ -26,6 +26,9 @@ $mOpenAPISpec['basePath'] = '/';
 $mOpenAPISpec['paths'] = {};
 $mOpenAPISpec['definitions'] = {};
 
+$mergepaths = [];
+$mergedefinitions = [];
+
 function showAPIsjson()
   {
   // Bring into focus
@@ -81,10 +84,10 @@ function processAPI($singleAPIs)
                 var jqxhr3 = $.getJSON($url, function($openapispec) {
 
                     $paths = $openapispec.paths;
-                    $$definitions = $openapispec.definitions;
+                    $definitions = $openapispec.definitions;
 
-                    $mOpenAPISpec['paths'].push($paths);
-                    $mOpenAPISpec['defiitions'].push($definitions);
+                    $mergepaths.push($paths);
+                    $mergedefinitions.push($definitions);
 
                     $openapi_spec_count++;
 
