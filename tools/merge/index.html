@@ -94,8 +94,14 @@ function processAPI($singleAPIs)
                     $paths = $openapispec.paths;
                     $definitions = $openapispec.definitions;
 
-                    $mergepaths.push($paths);
-                    $mergedefinitions.push($definitions);
+                    if($paths.length > 0)
+                      {
+                      $mergepaths.push($paths);
+                      }
+                    if($mergedefinitions.length > 0)
+                      {
+                      $mergedefinitions.push($definitions);
+                      }
 
                     $openapi_spec_count++;
 
