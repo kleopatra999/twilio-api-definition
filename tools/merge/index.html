@@ -38,7 +38,9 @@ function showAPIsjson()
   $viewer = JSON.stringify($mOpenAPISpec, null, 4);
 
   // Bring into focus
-  document.getElementById("jsonViewerDetails").style.display = $viewer;
+  document.getElementById("jsonViewerDetails").value = $viewer;
+  document.getElementById("jsonViewerDetails").style.display = '';
+
   // Show the Modal
   $('#apisJSONModal').modal('show');
   }
