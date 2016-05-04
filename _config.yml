@@ -67,7 +67,7 @@ navigation:
     extend: 1
     label2: Support
     link2: /support/
-    size2: 0
+    size2: 50
     padding: 0
     decorate: 0
   - label1: Paths
@@ -76,7 +76,7 @@ navigation:
     extend: 1
     label2: Summaries
     link2: /tools/manage-summaries/
-    size2: 0
+    size2: 50
     padding: 0
     decorate: 0
   - label1: Tags
