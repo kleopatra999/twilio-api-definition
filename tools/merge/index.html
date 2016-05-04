@@ -31,8 +31,14 @@ $mergedefinitions = [];
 
 function showAPIsjson()
   {
+
+  $mOpenAPISpec['paths'] = $mergepaths;
+  $mOpenAPISpec['definitions'] = $mergedefinitions;
+
+  $viewer = JSON.stringify($mOpenAPISpec, null, 4);
+
   // Bring into focus
-  document.getElementById("jsonViewerDetails").style.display = '';
+  document.getElementById("jsonViewerDetails").style.display = $viewer;
   // Show the Modal
   $('#apisJSONModal').modal('show');
   }
