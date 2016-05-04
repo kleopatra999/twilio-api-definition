@@ -1,0 +1,164 @@
+---
+layout: page
+title: 'Manage Paths'
+---
+
+<h3>Manage API Paths</h3>
+<p>This is a listing of API resources available in <a href="/apis.json">this projects APIs.json</a>, with an avaiable merge for saving.</p>
+<center><button style="margin-bottom: 10px;" onclick="showAPIsjson();" type="submit" class="btn btn-default" name="show-apis-json" value="1">View The APIs.json Being Annotated</button></center>
+
+<script type="text/jscript">
+
+var $apiurl = "";
+var $openapi_spec_count = 0;
+var $mOpenAPISpec = {};
+var $info = {};
+
+$info['title'] = "Merged APIs";
+$info['description'] = "This is a merged OpenAPI Spec.";
+$info['termsOfService'] = "";
+$info['version'] = "";
+
+$mOpenAPISpec['swagger'] = '2.0';
+$mOpenAPISpec['info'] = $info;
+$mOpenAPISpec['host'] = 'api.sample.com';
+$mOpenAPISpec['basePath'] = '/';
+$mOpenAPISpec['paths'] = {};
+$mOpenAPISpec['definitions'] = = {};
+
+function showAPIsjson()
+  {
+  // Bring into focus
+  document.getElementById("jsonViewerDetails").style.display = '';
+  // Show the Modal
+  $('#apisJSONModal').modal('show');
+  }
+
+function viewSpec($openapi_spec_count)
+    {
+
+    $newpaths = {};
+    $rowcount = 0;
+    $howmany = $('.path-list-' + $openapi_spec_count).length;
+    $currentJSON = $openapi_spec_store[$openapi_spec_count];
+
+    }
+
+function saveSpec($openapi_spec_count)
+    {
+     console.log("saving spec...");
+    }
+
+function processAPI($singleAPIs)
+    {
+
+    // Begin Each API
+    $.each($singleAPIs, function(apiKey, apiVal) {
+
+        $apiName = apiVal['name'];
+
+        $apiDesc = apiVal['description'];
+        $apiLogo = apiVal['image'];
+        $apiHumanURL = apiVal['humanURL'];
+        $apiBaseURL = apiVal['baseURL'];
+
+        $apiProperties = apiVal['properties'];
+
+        // Begin Each API Properties
+        $.each($apiProperties, function(propertyKey, propertyValue) {
+
+            $type = propertyValue['type'];
+            $url = propertyValue['url'];
+
+            // End OpenAPI Spec
+            if($type=='x-openapi-spec')
+                {
+
+                if (!/^(f|ht)tps?:\/\//i.test($url)) {
+                      $url = "{{ site.url }}" + $url;
+                   }
+
+                var jqxhr3 = $.getJSON($url, function($openapispec) {
+
+                    $openapi_spec_store[$openapi_spec_count] = $openapispec;
+
+                    $savePath = $url;
+
+                    $paths = $openapispec.paths;
+                    $$definitions = $openapispec.definitions;
+
+                    $mOpenAPISpec['paths'].push($paths);
+                    $mOpenAPISpec['defiitions'].push($definitions);
+
+                    $openapi_spec_count++;
+
+                   });
+                 }
+                // End OpenAPI Spec
+
+            });
+            // End Each API Properties
+
+        });
+        // Begin Each API
+    }
+
+function loadAPIsJson($apisjsonURL)
+    {
+
+      $apiHumanURL = "";
+
+      // Begin Pull Root APIs.json
+      var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
+
+        $masterName = apisJSON['name'];
+        $masterDesc = apisJSON['description'];
+        $masterLogo = apisJSON['image'];
+        $masterURL = apisJSON['url'];
+
+        $masterAPIs = apisJSON['apis'];
+
+        // Loop Through Each API
+        processAPI($masterAPIs)
+
+        $masterTags = apisJSON['tags'];
+        $masterIncludes = apisJSON['include'];
+
+        // Begin Includes
+        $.each($masterIncludes, function(masterKey, masterValue) {
+
+            $includeName = masterValue['name'];
+            $includeRootUrl = masterValue['url'];
+
+            // Begin Pull Include
+            loadAPIsJson($includeRootUrl)
+            // Begin Pull Include
+
+            });
+            // End Includes
+        });
+        // End Pull Root APIs.json
+    }
+
+$apisjsonURL = "../../apis.json";
+
+loadAPIsJson($apisjsonURL)
+
+</script>
+<div id="jsonBrowser"></div>
+<div class="modal fade" id="apisJSONModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Here Is The APIs.json File Being Annotated</h4>
+      </div>
+      <div class="modal-body">
+        <textarea id="jsonViewerDetails" rows="10" style="border: 0px solid #FFF; width: 500px; height: 100%; display: none;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default center-block" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
