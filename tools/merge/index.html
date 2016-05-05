@@ -95,7 +95,7 @@ function processAPI($singleAPIs)
                     $definitions = $openapispec.definitions;
 
                     // Merge
-                    console.log($paths);
+                    console.log($openapispec.paths.length());
                     if($paths)
                       {
                       $mergepaths.push($paths);
